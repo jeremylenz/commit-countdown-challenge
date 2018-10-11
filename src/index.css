@@ -15,9 +15,20 @@ code {
 
 .ui.statistics {
   display: inline-flex;
-  margin-bottom: 0;
+  margin-bottom: 5px;
+  margin-top: 0;
 }
 
 .ui.header {
   padding-top: 10px;
+}
+
+.ui.statistics>.statistic {
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+}
+
+.ui.statistic+.ui.statistic {
+    margin-left: 0.7em;
+    margin-right: 0.7em;
 }
