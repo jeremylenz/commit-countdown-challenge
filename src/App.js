@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CountdownTimer from './components/CountdownTimer.js'
+import CommitButton from './components/CommitButton.js'
 
 class App extends Component {
 
@@ -55,12 +56,22 @@ class App extends Component {
     return predicted2000
   }
 
+  addCommit = (timestamp) => {
+    let newCommit = Math.floor(timestamp / 1000) // convert to Unix style timestamp
+    this.setState((prevState, prevProps) => {
+      return {
+        commitList: [...prevState.commitList, newCommit]
+      }
+    })
+  }
+
   render() {
     const zeroTime = this.calculateZeroTime(this.state.commitList)
 
     return (
       <div className="App">
         <CountdownTimer zeroTime={zeroTime} />
+        <CommitButton addCommit={this.addCommit} />
       </div>
     );
   }

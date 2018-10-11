@@ -25,17 +25,22 @@ class CountdownTimer extends React.Component {
 
   tick() {
     let tMinus = moment.duration(this.props.zeroTime - Date.now())
-    let days = tMinus.days()
+    let days = Math.floor(tMinus.as('days'))
     let hours = tMinus.hours()
     let minutes = tMinus.minutes()
     let seconds = tMinus.seconds()
+    if (days < 0) { // If timer has reached 0, don't display negative numbers
+    days = 0
+    hours = 0
+    minutes = 0
+    seconds = 0
+  }
     this.setState({ days, hours, minutes, seconds })
   }
 
   render() {
     const { days, hours, minutes, seconds } = this.state
-    if (days === null) {
-      console.log('no days')
+    if (this.props.zeroTime === null) {
       return null
     }
     const items = [
