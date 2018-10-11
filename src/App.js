@@ -16,7 +16,9 @@ class App extends Component {
     // get list of commit timestamps
     let response = await fetch('https://api.staging.coord.co/codechallenge/commits')
     const listOfCommits = await response.json() // json() returns a Promise but I just want the value, so I use await here as well
-    this.calculateZeroTime(listOfCommits)
+    this.setState({
+      commitList: listOfCommits,
+    })
   }
 
   calculateZeroTime = (listOfCommits) => {
@@ -50,14 +52,11 @@ class App extends Component {
 
     // convert back to JS style timestamp
     predicted2000 *= 1000
-    this.setState({
-      commitList: listOfCommits,
-      zeroTime: predicted2000,
-    })
+    return predicted2000
   }
 
   render() {
-    const { zeroTime } = this.state
+    const zeroTime = this.calculateZeroTime(this.state.commitList)
 
     return (
       <div className="App">
