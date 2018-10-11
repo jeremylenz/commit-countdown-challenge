@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # commit-countdown-challenge
 Predictive countdown timer.
 
@@ -20,6 +18,7 @@ yarn start
 The app will load at `http://localhost:3000`.
 
 #### Libraries used
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 * React v16
 * `semantic-ui-react` - Semantic's `Statistic` component provides the visuals for the countdown timer. I also added a couple adjustments in `index.css`.
 * `moment` - Popular JS library for working with dates and durations.
