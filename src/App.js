@@ -8,7 +8,6 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      zeroTime: new Date(Date.now() + 86400000),
       commitList: [],
     }
   }
