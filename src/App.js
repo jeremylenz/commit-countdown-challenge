@@ -60,6 +60,7 @@ class App extends Component {
   addCommit = (timestamp) => {
     let newCommit = Math.floor(timestamp / 1000) // convert to Unix style timestamp
     this.setState((prevState, prevProps) => {
+      console.log(`${prevState.commitList.length + 1} commits, ${1999 - prevState.commitList.length} remaining`)
       return {
         commitList: [...prevState.commitList, newCommit]
       }
