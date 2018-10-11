@@ -15,6 +15,7 @@ code {
 
 .ui.statistics {
   display: inline-flex;
+  margin-bottom: 0;
 }
 
 .ui.header {
