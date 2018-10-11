@@ -17,6 +17,7 @@ class App extends Component {
     // get list of commit timestamps
     let response = await fetch('https://api.staging.coord.co/codechallenge/commits')
     const listOfCommits = await response.json() // json() returns a Promise but I just want the value, so I use await here as well
+    listOfCommits.sort()
     this.setState({
       commitList: listOfCommits,
     })

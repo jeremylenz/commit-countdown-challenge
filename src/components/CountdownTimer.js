@@ -2,7 +2,7 @@ import React from 'react';
 import { Statistic, Header } from 'semantic-ui-react'
 import moment from 'moment'
 
-class CountdownTimer extends React.Component {
+class CountdownTimer extends React.PureComponent {
 
   constructor() {
     super()
@@ -16,7 +16,7 @@ class CountdownTimer extends React.Component {
 
   componentDidMount() {
     this.tick()
-    this.timerId = setInterval(() => this.tick(), 1000)
+    this.timerId = setInterval(() => this.tick(), 200)
   }
 
   componentWillUnmount() {
